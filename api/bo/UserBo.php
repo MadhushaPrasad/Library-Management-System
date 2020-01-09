@@ -5,5 +5,5 @@ interface UserBo
 {
     public function addUser(User $user);
 
-    public function checkUser($email, $password);
+    public function checkUser($email, $password):bool;
 }

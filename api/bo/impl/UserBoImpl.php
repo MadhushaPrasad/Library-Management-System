@@ -36,8 +36,8 @@ class UserBoBoImpl implements UserBo
         }
     }
 
-    public function checkUser($email, $password)
+    public function checkUser($email, $password): bool
     {
-        // TODO: Implement checkUser() method.
+        return true;
     }
 }

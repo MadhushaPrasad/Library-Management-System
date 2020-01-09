@@ -1,7 +1,10 @@
 <?php
+require_once __DIR__ . "../bo/impl/UserBoImpl.php";
 
+$method = $_SERVER['REQUEST_METHOD'];
+$userbo = new UserBoImpl();
 
-class UserService
-{
-
+switch ($method) {
+    case "GET":
+        $action = $_GET["action"];
 }
