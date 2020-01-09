@@ -3,11 +3,11 @@
 
 class DBConnection
 {
-    private $host;
-    private $username;
-    private $password;
-    private $database;
-    private $port;
+    private $host='192.168.56.1';
+    private $username="root";
+    private $password="1234";
+    private $database="librarySystem";
+    private $port='3306';
 
     private $connection;
 

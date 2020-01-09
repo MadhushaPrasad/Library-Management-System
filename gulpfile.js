@@ -120,14 +120,14 @@ gulp.task('replacePath', function(){
         .pipe(replace('="images/', '="../../images/'))
         .pipe(replace('href="pages/', 'href="../../pages/'))
         .pipe(replace('href="documentation/', 'href="../../documentation/'))
-        .pipe(replace('href="index.html"', 'href="../../index.html"'))
+        .pipe(replace('href="dashboard.html"', 'href="../../dashboard.html"'))
         .pipe(gulp.dest('.'));
     gulp.src(['./pages/*.html'], { base: "./" })
         .pipe(replace('="images/', '="../images/'))
         .pipe(replace('"pages/', '"../pages/'))
-        .pipe(replace('href="index.html"', 'href="../index.html"'))
+        .pipe(replace('href="dashboard.html"', 'href="../dashboard.html"'))
         .pipe(gulp.dest('.'));
-    gulp.src(['./index.html'], { base: "./" })
+    gulp.src(['./dashboard.html'], { base: "./" })
         .pipe(replace('="images/', '="images/'))
         .pipe(gulp.dest('.'));
 });

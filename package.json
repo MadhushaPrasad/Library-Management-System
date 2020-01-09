@@ -1,8 +1,8 @@
 {
-  "name": "RoyalUI_admin",
+  "name": "Library manegment System",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "dashboard.html",
   "dependencies": {
     "bootstrap": "4.3.1",
     "chart.js": "2.7.1",
@@ -31,7 +31,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "templatewatch",
-  "url": "http://www.templatewatch.com/",
+  "url": "",
   "copyright": "",
   "license": ""
 }
