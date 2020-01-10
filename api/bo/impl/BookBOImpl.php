@@ -9,12 +9,32 @@ class BookBOImpl implements BookBO
 
     public function addBook(Book $book)
     {
-        // TODO: Implement addBook() method.
+        $bookRepo = new BookRepoImpl();
+        $connection = (new DBConnection())->getConnection();
+        $bookRepo->setConnection($connection);
+        $bookOB = new Book($book->getTitle(), $book->getAuthor(), $book->getAvailable(),
+            $book->getQuantity(), $book->getPrice());
+        $res = $bookRepo->addBook($bookOB);
+        if ($res) {
+            return true;
+        } else {
+            return $connection->error;
+        }
     }
 
     public function updateBook(Book $book)
     {
-        // TODO: Implement updateBook() method.
+        $bookRepo = new BookRepoImpl();
+        $connection = (new DBConnection())->getConnection();
+        $bookRepo->setConnection($connection);
+        $bookOB = new Book($book->getTitle(), $book->getAuthor(), $book->getAvailable(),
+            $book->getQuantity(), $book->getPrice());
+        $res = $bookRepo->updateBook($bookOB);
+        if ($res) {
+            return true;
+        } else {
+            return $connection->error;
+        }
     }
 
     public function deleteBook($id)

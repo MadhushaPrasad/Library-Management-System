@@ -26,4 +26,30 @@ switch ($method) {
         }
         break;
     case "POST":
+        $action = $_GET["action"];
+        switch ($action) {
+            case "save":
+                $bookTitle = $_POST["title"];
+                $bookAuthor = $_POST["author"];
+                $bookAvailable = $_POST["available"];
+                $bookQty = $_POST["qty"];
+                $bookPrice = $_POST["price"];
+                $newBook = new Book($bookTitle, $bookAuthor, $bookAvailable, $bookQty, $bookPrice);
+                $res = $bookBo->addBook($newBook);
+                echo $res;
+                break;
+            case "update":
+                $bookTitle = $_POST["title"];
+                $bookAuthor = $_POST["author"];
+                $bookAvailable = $_POST["available"];
+                $bookQty = $_POST["qty"];
+                $bookPrice = $_POST["price"];
+                $newBook = new Book($bookTitle, $bookAuthor, $bookAvailable, $bookQty, $bookPrice);
+                $res = $bookBo->updateBook($newBook);
+                echo $res;
+                break;
+        }
+        break;
+    default:
+        echo "Sorry system Error..";
 }
