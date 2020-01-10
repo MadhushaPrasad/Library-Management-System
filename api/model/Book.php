@@ -3,7 +3,7 @@
 
 class Book
 {
-
+    private $bId;
     private $title;
     private $author;
     private $quantity;
@@ -105,5 +105,21 @@ class Book
     public function setPrice($price)
     {
         $this->price = $price;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBId()
+    {
+        return $this->bId;
+    }
+
+    /**
+     * @param mixed $bId
+     */
+    public function setBId($bId)
+    {
+        $this->bId = $bId;
     }
 }

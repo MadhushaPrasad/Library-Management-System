@@ -6,15 +6,6 @@ class BookRepoImpl implements BookRepo
 {
     private $connection;
 
-    /**
-     * BookRepoImpl constructor.
-     */
-    public function __construct()
-    {
-
-    }
-
-
     public function setConnection(mysqli $conne)
     {
         $this->connection = $conne;
@@ -23,26 +14,44 @@ class BookRepoImpl implements BookRepo
 
     public function addBook(Book $book): bool
     {
-        return null;
+        $response = $this->connection->query("insert into book values('{$book->getTitle()}','{$book->getAuthor()}',
+                                        '{$book-> getAvailable()}','{$book-> getQuantity()}',{$book-> getPrice()})");
+        if ($response > 0 && $this->connection->affected_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function deleteBook($bookID): bool
     {
-        return null;
+        $response = $this->connection->query("delete from book where bId='{$bookID}'");
+        if ($response > 0 && $this->connection->affected_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function updateBook(Book $book): bool
     {
-        return null;
+        $response = $this->connection->query("update book set title='{$book->getTitle()}',author='{$book->getAuthor()}',aviliable='{$book->getAvailable()}' where bId='{$book->getBId()}'");
+        if ($response > 0 && $this->connection->affected_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function searchBook($bookID)
     {
-        // TODO: Implement searchBook() method.
+        $resultSet = $this->connection->query("select * from book where bId='{$bookID}'");
+        return $resultSet->fetch_assoc();
     }
 
     public function getAllBook(): array
     {
-        return null;
+        $resultSet = $this->connection->query("select * from book");
+        return $resultSet->fetch_all();
     }
 }
