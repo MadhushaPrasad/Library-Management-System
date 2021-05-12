@@ -5,7 +5,7 @@
   "main": "dashboard.html",
   "dependencies": {
     "bootstrap": "4.3.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "del": "2.2.2",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
