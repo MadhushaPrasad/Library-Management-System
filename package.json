@@ -22,7 +22,7 @@
     "gulp-inject-partials": "^1.0.3",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "minimatch": "^3.0.4",
+    "minimatch": "^3.0.5",
     "run-sequence": "^1.2.2",
     "gulp-concat": "^2.6.1",
     "merge-stream": "^1.0.1"
